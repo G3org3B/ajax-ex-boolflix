@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Inserire le Librerie da usare nella pagina -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js" charset="utf-8"></script>
     <script src="https://momentjs.com/downloads/moment.min.js"></script>
     <title>AJAX BOOLFLIX</title>
   </head>
@@ -19,18 +19,29 @@
     <div class="container">
 
       <div class="nav_ricerca">
+
         <h1 class="logo">BOOLFLIX</h1>
         <div class="input_ricerca">
           <input class="ricerca_film"type="text">
           <button class="button_search"type="button">Search film</button>
         </div>
-
       </div>
+
       <div class="risultati_film">
-        <ul>
+        <ul id="risultati">
+          <script id="risultatoTemplate" type="text/x-handlebars-template">
+            <div class="card">
+              <div class="poster"> <img src="{{ poster }}" alt="{{ titolo }}"> </div>
+                <ul class="risultato">
+                  <li> {{ titoloOriginale }}</li>
+                  <li> {{{ lingua }}} </li>
+                  <li> {{ descrizione }} </li>
+                  <li> {{{ voto }}} </li>
+                </ul>
+            </div>
+          </script>
 
         </ul>
-
       </div>
     </div>
 
