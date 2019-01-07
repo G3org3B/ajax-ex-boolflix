@@ -11,6 +11,8 @@ var paesiSupportati = ["it", "en"];
 
 $(document).ready(function () {
 
+//   
+
   $('.button_search').click(function () {
 
     var ricercaFilm = $('.ricerca_film').val();
